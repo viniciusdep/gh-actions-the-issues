@@ -16,8 +16,14 @@ jobs:
               run: npm test
             - name: Run Lint
               run: npm run lint
-    deploy:
+    build:
         needs: test-lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build Solution
+              run: npm run build
+    deploy:
+        needs: build
         runs-on: ubuntu-latest
         steps:
             - name: Deploy code

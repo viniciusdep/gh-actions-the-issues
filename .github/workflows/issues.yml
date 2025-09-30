@@ -1,7 +1,7 @@
 name: Issue Information
 on: 
     issues:
-        types: created
+        types: [opened]
 jobs:
   process_issue:
     runs-on: ubuntu-latest
